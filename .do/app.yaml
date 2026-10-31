@@ -1,0 +1,45 @@
+name: beware
+region: nyc
+services:
+  - name: web
+    github:
+      repo: YOUR_GITHUB_USERNAME/beware
+      branch: main
+      deploy_on_push: true
+    build_command: npm run build
+    run_command: npm run start
+    environment_slug: node-js
+    instance_count: 1
+    instance_size_slug: apps-s-1vcpu-512mb
+    http_port: 3000
+    envs:
+      - key: NEXT_PUBLIC_APP_URL
+        scope: RUN_AND_BUILD_TIME
+        value: ${APP_URL}
+      - key: OPTIIC_API_KEY
+        scope: RUN_TIME
+        type: SECRET
+      - key: GOOGLE_CLIENT_ID
+        scope: RUN_TIME
+        type: SECRET
+      - key: GOOGLE_CLIENT_SECRET
+        scope: RUN_TIME
+        type: SECRET
+      - key: GOOGLE_REDIRECT_URI
+        scope: RUN_AND_BUILD_TIME
+        value: ${APP_URL}/api/auth/google/callback
+      - key: PROXIEDMAIL_API_KEY
+        scope: RUN_TIME
+        type: SECRET
+      - key: ABUSEIPDB_KEY
+        scope: RUN_TIME
+        type: SECRET
+      - key: VIRUSTOTAL_KEY
+        scope: RUN_TIME
+        type: SECRET
+      - key: SHODAN_API_KEY
+        scope: RUN_TIME
+        type: SECRET
+      - key: ABUSECH_AUTH_KEY
+        scope: RUN_TIME
+        type: SECRET
