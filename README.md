@@ -4,10 +4,6 @@
 
 BEWARE checks your email, passwords, links and servers against real security databases and gives you two scores: a Privacy Score and a Cyber Risk Score. No made-up data. If a source fails, BEWARE shows the real error instead of hiding it.
 
-[Live demo: https://your-app.ondigitalocean.app] | [Demo video: LinkedIn link]
-
-![BEWARE dashboard](docs/dashboard.png)
-
 ## What you can check
 
 ### Privacy tab
